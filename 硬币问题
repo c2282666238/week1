@@ -1,0 +1,29 @@
+package homework;
+
+import java.util.Scanner;
+
+
+public class test {
+public static void main(String a[]) {
+	
+	 float totalMoney;
+	 int dollars1,centCoin50,centCoin20,centCoin10,centCoin5;
+	Scanner scan =new Scanner(System.in);
+	System.out.println("请输入总金钱数");
+	totalMoney=scan.nextFloat();
+	dollars1=(int) (totalMoney/1);
+	totalMoney=totalMoney-dollars1;
+	centCoin50=(int) (totalMoney/0.5);
+	totalMoney=(float) (totalMoney-(centCoin50*0.5));
+	centCoin20=(int) (totalMoney/0.2);
+	totalMoney=(float) (totalMoney-centCoin20*0.2);
+	centCoin10=(int) (totalMoney/0.1);
+	totalMoney=(float) (totalMoney-centCoin10*0.1);
+	centCoin5=(int) (totalMoney/0.05);
+	System.out.print(dollars1+"$");
+	System.out.print(" 50c x "+centCoin50);
+	System.out.print(" 20c x "+centCoin20);
+	System.out.print(" 10c x "+centCoin10);
+	System.out.print(" 5c x "+centCoin5);
+}
+}
