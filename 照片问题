@@ -1,0 +1,61 @@
+package test;
+
+import java.beans.beancontext.BeanContextServiceProviderBeanInfo;
+import java.util.Scanner;
+
+//import com.sun.tools.jdeprscan.scan.Scan;
+
+public class test1 {
+	public static void main(String ar[]) {
+	float inchesLength,incheswide,totalLength,totalMoney=0,area;
+	String typesOfFarmes1,typesOfFarmes2,typesOfFarmes3,typesOfFarmes4,typesOfFarmes;
+	int x;
+	
+	
+	
+	typesOfFarmes1=new String("regular");
+	typesOfFarmes2=new String("fancy");
+	typesOfFarmes3=new String("cardboard paper");
+	typesOfFarmes4=new String("glass");
+	Scanner scan=new Scanner(System.in);
+	System.out.println("请输入照片长度");
+	inchesLength=scan.nextFloat();
+	System.out.println("请输入照片宽度");
+	incheswide=scan.nextFloat();
+	area=inchesLength*incheswide;
+	totalLength=2*(inchesLength+incheswide);
+	System.out.println("请输入框架样式(fancy or regular)");
+	typesOfFarmes=scan.next();
+	if (typesOfFarmes.equals(typesOfFarmes1)) {
+		totalMoney=(float) (0.15*totalLength);
+	} else if(typesOfFarmes.equals(typesOfFarmes2)){
+		totalMoney=(float) (0.25*(totalLength));
+	}else {
+		System.out.println("输入错误");
+	}
+	System.out.println("请输入底板样式(cardboard paper or glass)");
+	typesOfFarmes=scan.next();
+	if (typesOfFarmes.equals(typesOfFarmes3)) {
+		totalMoney=(float)( totalMoney+area*0.02);
+	} else if(typesOfFarmes.equals(typesOfFarmes4)){
+		totalMoney=(float) (totalMoney+area*0.07);
+	}else {
+		System.out.println("输入错误");
+	}
+	totalMoney=(float) (totalMoney+0.1*area);
+	System.out.println("输入是否需要加冠(yes or no)");
+	typesOfFarmes=scan.next();
+	if (typesOfFarmes.equals("yes")) {
+		System.out.println("输入需要加几个冠:");
+		x=scan.nextInt();
+		totalMoney=(float) (totalMoney+x*0.35);
+	}else if(typesOfFarmes.equals("no")) {
+		
+	}
+		
+	else {
+		System.out.println("输入错误");
+}
+	System.out.println("总成本为:"+totalMoney+"$");
+}
+}
